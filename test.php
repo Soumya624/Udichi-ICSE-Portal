@@ -24,6 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
     </script>
+    <style>
+        select {
+            border: none;
+            color: red;
+        }
+
+        a {
+            display: none;
+        }
+
+        .goog-te-gadget {
+            font-size: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,8 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <table>
                         <tr>
                             <td colspan="2">
-                                <p style="font-size:18px; font-weight:bold">
+                                <p style="font-size:18px; font-weight:bold; display:flex">
                                     <?php echo $question['quesNo'] . " . " . $question['ques']; ?>
+                                    <input onclick="responsiveVoice.speak('<?php echo $question['ques']; ?>');"
+                                        type='button' value='🔊' style="border:none; background-color:white" />
                                 </p>
                             </td>
                             <br />
@@ -70,9 +86,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <br />
                     <center>
                         <input type="submit" name="submit" class="btn btn-outline-primary" value="Next Question"
-                            style="border-radius:20px; width:15%" />
+                            style="border-radius:20px; width:40%" />
                         <input type="hidden" name="quesnumber" value="<?php echo $quesnumber; ?>" />
-                        <center>
+                        <div id="google_translate_element" style="margin-top:7px"></div>
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+                            }
+                        </script>
+                        <script type="text/javascript"
+                            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+                    <center>
                 </form>
                 <br />
                 <br />
