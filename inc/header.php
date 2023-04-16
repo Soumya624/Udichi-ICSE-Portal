@@ -51,7 +51,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="/exam">Online Exam System</a>
+      <a class="navbar-brand" href="#">Udichi ICSE Portal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -73,15 +73,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
               <a class="nav-link" href="profile.php">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="exam.php">Exam</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="?action=logout">Logout</a>
             </li>
           <?php } else { ?>
-            <li class="nav-item"><a class="nav-link" href="index.php">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
             <li class="nav-item"><a class="nav-link" href="admin/">Admin</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">Student</a></li>
           <?php } ?>
         </ul>
       </div>

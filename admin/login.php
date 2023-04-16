@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="card" style="width:100%; padding: 5%">
                         <div class="card-body">
                             <center>
-                                <h4>Login Here</h4>
+                                <h4>Login Admin</h4>
                                 <p style="padding:1% 10%">Please Enter the Following Details to Get Into Your Account
                                 </p>
                             </center>

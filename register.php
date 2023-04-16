@@ -12,7 +12,7 @@
 					<div class="card" style="width:100%; padding: 5%">
 						<div class="card-body">
 							<center>
-								<h4>Signup Here</h4>
+								<h4>Signup Student</h4>
 								<p style="padding:1% 10%">Please Enter the Following Details to Create Your Account
 								</p>
 							</center>
