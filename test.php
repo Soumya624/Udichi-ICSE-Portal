@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="padding:5%">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Question
+                <h3 class="mt-5">Question
                     <?php echo $question['quesNo'] . " of " . $total; ?>
-                </h1>
+                </h3>
                 <br />
                 <br />
             </div>
@@ -33,10 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <table>
                         <tr>
                             <td colspan="2">
-                                <h3>Que
-                                    <?php echo $question['quesNo'] . " : " . $question['ques']; ?>
-                                </h3>
+                                <p style="font-size:18px; font-weight:bold">
+                                    <?php echo $question['quesNo'] . " . " . $question['ques']; ?>
+                                </p>
                             </td>
+                            <br />
                         </tr>
                         <?php
                         $answer = $exam->getAnswer($quesnumber);
@@ -51,24 +52,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                     value="<?php echo $result['id']; ?>" /><?php echo $result['ans']; ?>
                                             </label>
                                         </div>
-
-                                        <!--<input type="radio" name="ans" value="-->
-                                        <?php //echo $result['id']; ?><!--" />-->
-                                        <?php //echo $result['ans']; ?>
                                     </td>
                                 </tr>
                             <?php }
                         } ?>
-                        <tr>
-                            <td>
-                                <br />
-                                <input type="submit" name="submit" class="btn btn-outline-primary"
-                                    value="Next Question" />
-                                <input type="hidden" name="quesnumber" value="<?php echo $quesnumber; ?>" />
-                            </td>
-                        </tr>
-
                     </table>
+                    <br />
+                    <br />
+                    <br />
+                    <center>
+                        <input type="submit" name="submit" class="btn btn-outline-primary" value="Next Question"
+                            style="border-radius:20px; width:15%" />
+                        <input type="hidden" name="quesnumber" value="<?php echo $quesnumber; ?>" />
+                    <center>
                 </form>
                 <br />
                 <br />

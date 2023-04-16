@@ -17,68 +17,85 @@ $next = $total + 1;
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="padding:3%">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Add new Questions</h1>
                 <?php
                 if (isset($addQuestion)) {
                     echo $addQuestion;
                 } ?>
                 <br />
+                <br />
             </div>
+            <div class="card" style="width:100%; padding: 1% 5%">
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <form action="" method="post" name="tbl_ans">
+                            <center>
+                                <h4>Create Questions</h4>
+                                <p>Please Fill the Following Details to Add Question
+                                    <?php echo $next ?>
+                                </p>
+                            </center>
+                            <br />
+                            <br />
+                            <table>
+                                <tr>
+                                    Question No.
+                                    <input class="form-control" readonly type="number" name="quesNo" value="<?php
+                                    if (isset($next)) {
+                                        echo $next;
+                                    }
 
+                                    ?>">
+                                </tr>
+                                <br />
+                                <tr>
+                                    <input class="form-control" type="text" name="ques"
+                                        placeholder="Enter Your Question" required style="height:100px">
+                                </tr>
+                                <br />
+                                <br />
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input class="form-control" type="text" name="ans1"
+                                            placeholder="Enter Option 1">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" type="text" name="ans2"
+                                            placeholder="Enter Option 2">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:1%">
+                                    <div class="col-sm-6">
+                                        <input class="form-control" type="text" name="ans3"
+                                            placeholder="Enter Option 3">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" type="text" name="ans4"
+                                            placeholder="Enter Option 4">
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <tr>
+                                    Correct Option
+                                    <input class="form-control" type="number" name="rightAns" min="1" max="4"
+                                        required="1">
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <br />
+                            <center>
+                                <input type="submit" class="btn btn-outline-primary"
+                                    style="border-radius:20px; width:20%" value="Submit">
+                                <input class="btn btn-outline-primary" style="border-radius:20px; width:20%"
+                                    value="Need Help">
+                            </center>
+                        </form>
 
-            <div class="col-lg-12">
-                <form action="" method="post" name="tbl_ans">
-                    <table>
-                        <tr>
-                            <td>Question No</td>
-                            <td> : </td>
-                            <td><input class="form-control" readonly type="number" name="quesNo" value="<?php
-                            if (isset($next)) {
-                                echo $next;
-                            }
-
-                            ?>"></td>
-                        </tr>
-                        <tr>
-                            <td>Question</td>
-                            <td> : </td>
-                            <td><input class="form-control" type="text" name="ques" placeholder="Enter your question"
-                                    required></td>
-                        </tr>
-                        <tr>
-                            <td>Choice One</td>
-                            <td> : </td>
-                            <td><input type="text" name="ans1" placeholder="Enter choice no 1"></td>
-                        </tr>
-                        <tr>
-                            <td>Choice Two</td>
-                            <td> : </td>
-                            <td><input type="text" name="ans2" placeholder="Enter choice no 2"></td>
-                        </tr>
-                        <tr>
-                            <td>Choice Three</td>
-                            <td> : </td>
-                            <td><input type="text" name="ans3" placeholder="Enter choice no 3"></td>
-                        </tr>
-                        <tr>
-                            <td>Choice Four</td>
-                            <td> : </td>
-                            <td><input type="text" name="ans4" placeholder="Enter choice no 4"></td>
-                        </tr>
-                        <tr>
-                            <td>Correct No</td>
-                            <td> : </td>
-                            <td><input class="form-control" type="number" name="rightAns" min="1" max="4" required="1">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><input type="submit" class="btn btn-primary" value="Submit"></td>
-                        </tr>
-                    </table>
-                </form>
-
+                    </div>
+                </div>
             </div>
         </div>
     </div>

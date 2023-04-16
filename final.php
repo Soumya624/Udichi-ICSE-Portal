@@ -7,28 +7,30 @@ Session::checkSession();
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="padding:5%">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Congrats! You have just completed test.</h1>
-                <p class="lead">Check your final score. You can also check the correct answers.</p>
+                <h3 class="mt-5">Congrats! You Have Just Completed the Test</h3>
+                <p>Check Your Final Score. You Can Also Check the Correct Answers</p>
                 <br />
 
                 <div class="jumbotron">
-                    <h1 class="text-danger">Final Score:
+                    <h3 class="text-danger">Final Score:
                         <?php
                         if (isset($_SESSION['score'])) {
                             echo $_SESSION['score'];
                             unset($_SESSION['score']);
                         }
                         ?>
-                    </h1>
+                    </h3>
                 </div>
                 <br />
                 <br />
-                <a class="btn btn-outline-success btn-lg" href="viewans.php"><span class="fa fa-check-circle"></span>
+                <a class="btn btn-outline-primary" href="viewans.php" style="border-radius:20px; width:15%"><span
+                        class="fa fa-check-circle"></span>
                     View
                     Answer</a>
-                <a class="btn btn-outline-info btn-lg" href="starttest.php"><span class="fa fa-arrow-right"></span>
+                <a class="btn btn-outline-primary" href="starttest.php" style="border-radius:20px; width:15%"><span
+                        class="fa fa-arrow-right"></span>
                     Start
                     Test</a>
                 <br />

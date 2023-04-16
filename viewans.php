@@ -10,9 +10,9 @@ $total = $exam->getTotalRows();
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">All Question & Answer - Total
+                <h3 class="mt-5">Answer of
                     <?php echo $total; ?> Questions
-                </h1>
+                </h3>
                 <br />
                 <br />
             </div>
@@ -26,9 +26,9 @@ $total = $exam->getTotalRows();
                             ?>
                             <tr>
                                 <td colspan="2">
-                                    <h5>Que
-                                        <?php echo $question['quesNo'] . " : " . $question['ques']; ?>
-                                    </h5>
+                                    <p style="font-size:18px; font-weight:bold; margin:5% 0">
+                                        <?php echo $question['quesNo'] . " . " . $question['ques']; ?>
+                                    </p>
                                 </td>
                             </tr>
                             <?php
@@ -42,7 +42,7 @@ $total = $exam->getTotalRows();
                                             <input type="radio" />
                                             <?php
                                             if ($result['rightAns'] == '1') {
-                                                echo "<span style='color:green;font-weight: bold;'>" . $result['ans'] . " (Correct Ans)</span>";
+                                                echo "<span style='color:green;font-weight: bold;'>" . $result['ans'] . "</span>";
                                             } else {
                                                 echo $result['ans'];
                                             }
@@ -54,11 +54,17 @@ $total = $exam->getTotalRows();
                         <?php }
                     } ?>
                 </table>
-
-
-                <a href="starttest.php" class="btn btn-success btn-lg">
-                    <span class="fa fa-arrow-right"></span> Start Exam
-                </a>
+                <br />
+                <br />
+                <br />
+                <center>
+                    <a href="exam.php" class="btn btn-outline-primary" style="border-radius:20px; width:15%">
+                        Go Back
+                    </a>
+                    <a href="starttest.php" class="btn btn-outline-primary" style="border-radius:20px; width:15%">
+                        Need Help
+                    </a>
+                </center>
                 <br />
                 <br />
             </div>

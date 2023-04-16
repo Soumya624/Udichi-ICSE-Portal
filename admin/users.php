@@ -24,15 +24,14 @@ if (isset($_GET['del'])) {
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="padding:3%">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Manage Users</h1>
+                <h3 class="mt-5">Manage Users</h3>
+                <br />
                 <br />
             </div>
-
-
             <div class="col-lg-12">
-                <table class="table table-striped"">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th>NO</th>

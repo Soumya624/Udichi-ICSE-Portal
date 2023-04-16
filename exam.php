@@ -9,15 +9,12 @@ Session::checkSession();
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">You can start your exam</h1>
-                <p class="lead">Take your time. Click Start Exam when you are ready.</p>
-                <img src="img/takeTest.png" height="200" width="200" />
+                <h1 class="mt-5">Start Your Exam</h1>
+                <p class="lead">Take Your Time. Click the Button Below Once You're Ready</p>
+                <img src="img/p5.png" />
                 <br />
-                <br />
-
-                <a href="starttest.php" class="btn btn-success btn-lg">
-                    <span class="fa fa-arrow-right"></span> Start Exam
-                </a>
+                <a href="starttest.php" class="btn btn-outline-primary" style="border-radius:20px; width:15%">Start Exam</a>
+                <a href="#" class="btn btn-outline-primary" style="border-radius:20px; width:15%">Need Help</a>
                 <br />
                 <br />
             </div>
