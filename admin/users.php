@@ -65,7 +65,7 @@ if (isset($_GET['del'])) {
                                 <td><?php echo $result['email']; ?></td>
                                 <td>
                                     <a class=" btn btn-outline-danger"
-                            onclick="return confirm('Are you sure to Delete.')" href="?del=<?php echo $result['userId']; ?>">
+                            onclick="return confirm('Are You Sure to Delete?')" href="?del=<?php echo $result['userId']; ?>">
                             Remove</a>
                             </td>
                             </tr>

@@ -35,7 +35,7 @@ class Admin
 		} else {
 			$msg = "<div class=\"alert alert-danger alert-dismissible\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    <strong>Username password does not match</strong></div>";
+    <strong>Username and Password Didn't Match</strong></div>";
 			return $msg;
 		}
 	}

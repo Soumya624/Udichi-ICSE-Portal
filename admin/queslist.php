@@ -51,7 +51,7 @@ if (isset($_GET['delque'])) {
                                     <td>
                                         <?php echo $result['ques']; ?>
                                     </td>
-                                    <td><a onclick="return confirm('Are you sure to Delete.')"
+                                    <td><a onclick="return confirm('Are You Sure to Delete?')"
                                             href="?delque=<?php echo $result['quesNo']; ?>">Remove</a>
                                     </td>
                                 </tr>

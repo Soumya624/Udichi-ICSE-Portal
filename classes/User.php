@@ -31,13 +31,13 @@ class User
       if ($name == "" || $userName == "" || $password == "" || $email == "") {
          echo "<div class=\"alert alert-danger alert-dismissible\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    <strong>Fields must not be empty</strong>
+    <strong>Fields Can't be Empty</strong>
   </div>";
          exit();
       } elseif (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
          echo "<div class=\"alert alert-danger alert-dismissible\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    <strong>Invalid email address.</strong></div>";
+    <strong>Invalid Email Address</strong></div>";
          exit();
       } else {
          $chkquery = "SELECT * FROM tbl_user WHERE email = '$email'";
@@ -45,18 +45,18 @@ class User
          if ($chkresult != false) {
             echo "<div class=\"alert alert-danger alert-dismissible\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    <strong>Email already exists. Try with different email.</strong></div>";
+    <strong>Email Already Exists</strong></div>";
             exit();
          } else {
             $query = "INSERT INTO tbl_user(name, userName, password, email) VALUES('$name','$userName', MD5('" . $password . "'),'$email')";
             $insertr = $this->db->insert($query);
             if ($insertr) {
-               echo "<div class=\"alert alert-success alert-dismissible fade show\">Registration Successful. Please login.</div>";
+               echo "<div class=\"alert alert-success alert-dismissible fade show\">Registration Successful!</div>";
                exit();
             } else {
                echo "<div class=\"alert alert-danger alert-dismissible\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    <strong>Something happened. Registration Unsucessful.</strong></div>";
+    <strong>Something Happened. Registration Unsucessful</strong></div>";
                exit();
             }
          }
@@ -113,7 +113,7 @@ class User
       $result = $this->db->update($query);
       if ($result) {
          $msg = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
-  <strong>All right!</strong> Data updated successfully
+  <strong>All right!</strong> Data Updated Successfully!
   <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
     <span aria-hidden=\"true\">&times;</span>
   </button>
@@ -121,7 +121,7 @@ class User
          return $msg;
       } else {
          $msg = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
-  <strong>Oh shoot!</strong> Data was NOT updated.
+  <strong>Oh shoot!</strong> Data Wasn't Updated
   <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
     <span aria-hidden=\"true\">&times;</span>
   </button>
@@ -142,10 +142,10 @@ class User
       $update = "UPDATE tbl_user SET status = '1' WHERE userId = '$userId'";
       $result = $this->db->update($update);
       if ($result) {
-         $msg = "<span class='success'>Data Disable Successfuly!</span>";
+         $msg = "<span class='success'>Data Disabled Successfully!</span>";
          return $msg;
       } else {
-         $msg = "<span class='error'>Data Not Disable! </span>";
+         $msg = "<span class='error'>Data isn't Disabled</span>";
          return $msg;
       }
 
@@ -156,10 +156,10 @@ class User
       $update = "UPDATE tbl_user SET status = '0' WHERE userId = '$userId'";
       $result = $this->db->update($update);
       if ($result) {
-         $msg = "<span class='success'>Data Enable Successfuly!</span>";
+         $msg = "<span class='success'>Data Enable Successfully!</span>";
          return $msg;
       } else {
-         $msg = "<span class='error'>Data Not Enable! </span>";
+         $msg = "<span class='error'>Data isn't Enabled</span>";
          return $msg;
       }
    }
@@ -170,7 +170,7 @@ class User
       $result = $this->db->delete($delete);
       if ($result) {
          $msg = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
-  <strong>All right!</strong> Data was deleted successfully
+  <strong>All right!</strong> Data was Deleted Successfully!
   <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
     <span aria-hidden=\"true\">&times;</span>
   </button>
@@ -178,7 +178,7 @@ class User
          return $msg;
       } else {
          $msg = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
-  <strong>All right!</strong> Data was not deleted
+  <strong>All right!</strong> Data wasn't Deleted
   <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
     <span aria-hidden=\"true\">&times;</span>
   </button>

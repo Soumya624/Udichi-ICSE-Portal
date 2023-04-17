@@ -45,13 +45,12 @@ $next = $total + 1;
                                     if (isset($next)) {
                                         echo $next;
                                     }
-
                                     ?>">
                                 </tr>
                                 <br />
                                 <tr>
                                     <input class="form-control" type="text" name="ques"
-                                        placeholder="Enter Your Question" required style="height:100px">
+                                        placeholder="Enter Your Question" style="height:100px">
                                 </tr>
                                 <br />
                                 <br />
@@ -79,8 +78,7 @@ $next = $total + 1;
                                 <br />
                                 <tr>
                                     Correct Option
-                                    <input class="form-control" type="number" name="rightAns" min="1" max="4"
-                                        required="1">
+                                    <input class="form-control" type="number" name="rightAns" min="1" max="4">
                                 </tr>
                             </table>
                             <br />
@@ -89,8 +87,8 @@ $next = $total + 1;
                             <center>
                                 <input type="submit" class="btn btn-outline-primary"
                                     style="border-radius:20px; width:20%" value="Submit">
-                                <input class="btn btn-outline-primary" style="border-radius:20px; width:20%"
-                                    value="Need Help">
+                                <button class="btn btn-outline-primary" style="border-radius:20px; width:20%"
+                                    onclick="importexcel()">Use Google Sheet</button>
                             </center>
                         </form>
 
@@ -100,5 +98,55 @@ $next = $total + 1;
         </div>
     </div>
 </body>
+<script>
+    function importexcel() {
+        let SHEET_ID = "1rGqFdOYUrO6CbXbLTFNGlmAyAUueFrXWXoblBIGgnAg";
+        let SHEET_TITLE = "QnA";
+        let SHEET_RANGE = "A1:F9";
+
+        let FULL_URL =
+            "https://docs.google.com/spreadsheets/d/" +
+            SHEET_ID +
+            "/gviz/tq?sheet=" +
+            SHEET_TITLE +
+            "&range=" +
+            SHEET_RANGE;
+
+        fetch(FULL_URL)
+            .then((res) => res.text())
+            .then((rep) => {
+                let data = JSON.parse(rep.substr(47).slice(0, -2));
+                console.log(data.table.rows);
+
+                var count = 1;
+
+                for (var i = 0; i < data.table.rows.length; i++) {
+                    var ques = data.table.rows[i].c[0].v;
+                    var c1 = data.table.rows[i].c[1].v;
+                    var c2 = data.table.rows[i].c[2].v;
+                    var c3 = data.table.rows[i].c[3].v;
+                    var c4 = data.table.rows[i].c[4].v;
+                    var correct = data.table.rows[i].c[5].v;
+
+                    // console.log(ques);
+
+                    // Send AJAX request to server-side PHP script to insert data into database
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "insertquestion.php", true);
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            //console.log(xhr.responseText);
+                        }
+                    };
+                    xhr.send("quesNo=" + count + "&ques=" + ques + "&ans1=" + c1 + "&ans2=" + c2 + "&ans3=" + c3 + "&ans4=" + c4 + "&rightAns=" + correct);
+
+                    count++;
+                }
+            })
+
+        alert('Imported Successfully!')
+    }
+</script>
 
 </html>

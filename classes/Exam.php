@@ -46,6 +46,13 @@ class Exam
                }
             }
          }
+
+         // Sort tbl_ques and tbl_ans tables based on quesNo
+         $sort_query = "ALTER TABLE tbl_ques ORDER BY quesNo";
+         $this->db->select($sort_query);
+         $sort_query = "ALTER TABLE tbl_ans ORDER BY quesNo";
+         $this->db->select($sort_query);
+
          $msg = "<div class='alert alert-success'>Data Inserted Successfuly!</div>";
          return $msg;
       }
@@ -68,7 +75,7 @@ class Exam
          $msg = "<div class='alert alert-success'>Qusetion Deleted Successfuly!</div>";
          return $msg;
       } else {
-         $msg = "<div class='alert alert-danger'>Data Not Deleted.</div>";
+         $msg = "<div class='alert alert-danger'>Data Not Deleted</div>";
          return $msg;
       }
    }
