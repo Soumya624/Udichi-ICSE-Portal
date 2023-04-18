@@ -17,6 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $exam->getAddQuestion($data);
 
     // Print success or error message
-    echo $result;
+    //echo $result;
 }
 ?>

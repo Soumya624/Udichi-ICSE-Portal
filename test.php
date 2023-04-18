@@ -97,33 +97,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <script type="text/javascript"
                             src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                         <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-                    <center>
+                        <center>
                 </form>
                 <br />
                 <br />
             </div>
         </div>
     </div>
-    <!-- <div class="card">
-        <h5 class="card-header h5 text-center">
-            HTML 5 & JS live Cam
-        </h5>
-        <div class="card-body">
-            <div class="booth">
-                <video id="video" width="100%" height="100%" autoplay>
-                </video>
-            </div>
-
-            <div class="text-right">
-                <a href="#!" class="btn btn-danger" onClick="stop()">
-                    Stop Cam
-                </a>
-                <a href="#!" class="btn btn-success" onClick="start()">
-                    Start Cam
-                </a>
-            </div>
-        </div>
-    </div> -->
+    <div class="booth">
+        <video id="video" width="18%" height="18%" autoplay style="position:absolute; right:0; bottom:0">
+        </video>
+    </div>
     <script>
         var stop = function () {
             var stream = video.srcObject;
