@@ -26,22 +26,25 @@ class Exam
       $ans[4] = $data['ans4'];
       $rightAns = mysqli_real_escape_string($this->db->link, $data['rightAns']);
 
+      // Check if the question already exists
+      $check_query = "SELECT * FROM tbl_ques WHERE quesNo = '$quesNo'";
+      $check_result = $this->db->select($check_query);
+      if ($check_result && mysqli_num_rows($check_result) > 0) {
+         return;
+      }
 
+      // Insert the question into tbl_ques
       $query = "INSERT INTO tbl_ques(quesNo, ques) VALUES('$quesNo','$ques')";
       $insert_row = $this->db->insert($query);
 
       if ($insert_row) {
+         // Insert the answers into tbl_ans
          foreach ($ans as $key => $ansName) {
             if ($ansName != '') {
-               if ($rightAns == $key) {
-                  $rquery = "INSERT INTO tbl_ans(quesNo, rightAns, ans) VALUES('$quesNo','1','$ansName')";
-               } else {
-                  $rquery = "INSERT INTO tbl_ans(quesNo, rightAns, ans) VALUES('$quesNo','0','$ansName')";
-               }
+               $is_right_ans = $key == $rightAns ? '1' : '0';
+               $rquery = "INSERT INTO tbl_ans(quesNo, rightAns, ans) VALUES('$quesNo','$is_right_ans','$ansName')";
                $rinsert = $this->db->insert($rquery);
-               if ($rinsert) {
-                  continue;
-               } else {
+               if (!$rinsert) {
                   die('Error...');
                }
             }
@@ -53,7 +56,7 @@ class Exam
          $sort_query = "ALTER TABLE tbl_ans ORDER BY quesNo";
          $this->db->select($sort_query);
 
-         $msg = "<div class='alert alert-success'>Data Inserted Successfuly!</div>";
+         $msg = "<div class='alert alert-success'>Data Inserted Successfully!</div>";
          return $msg;
       }
    }

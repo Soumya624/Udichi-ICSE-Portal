@@ -144,8 +144,7 @@ $next = $total + 1;
                     count++;
                 }
             })
-
-        alert('Imported Successfully!')
+        alert('Imported Successfully!');
     }
 </script>
 
