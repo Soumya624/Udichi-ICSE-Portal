@@ -36,7 +36,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./../index.php">Student</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./../login.php">Student</a></li>
                 </ul>
             </div>
         </div>

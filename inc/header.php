@@ -77,7 +77,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
             </li>
           <?php } else { ?>
             <li class="nav-item"><a class="nav-link" href="admin/">Admin</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.php">Student</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.php">Student</a></li>
           <?php } ?>
         </ul>
       </div>
