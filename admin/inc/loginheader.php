@@ -38,7 +38,7 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                     <li class="nav-item"><a class="nav-link" href="./../index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="./../services.php">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="./../faqs.php">FAQs</a></li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Login
                     </a>
@@ -46,9 +46,9 @@ header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
                         <li><a class="dropdown-item" href="index.php">Admin</a></li>
                         <li><a class="dropdown-item" href="./../login.php">Student</a></li>
                     </ul>
-                    </li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="index.php">Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./../login.php">Student</a></li> -->
+                    </li> -->
+                    <li class="nav-item"><a class="nav-link" href="index.php">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./../login.php">Student</a></li>
                 </ul>
             </div>
         </div>

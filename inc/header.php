@@ -79,7 +79,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
             <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="faqs.php">FAQs</a></li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Login
               </a>
@@ -87,9 +87,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
                   <li><a class="dropdown-item" href="admin/">Admin</a></li>
                   <li><a class="dropdown-item" href="login.php">Student</a></li>
               </ul>
-            </li>
-            <!-- <li class="nav-item"><a class="nav-link" href="admin/">Admin</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.php">Student</a></li> -->
+            </li> -->
+            <li class="nav-item"><a class="nav-link" href="admin/">Admin</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.php">Student</a></li>
           <?php } ?>
         </ul>
       </div>
