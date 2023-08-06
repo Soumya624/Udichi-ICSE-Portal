@@ -93,11 +93,19 @@
 										<input type="email" class="form-control" id="email" name="email"
 											placeholder="Enter Email">
 									</div>
+
+									<div class="form-group">
+										<label for="exampleInputPhone1">Phone</label>
+										<input type="text" class="form-control" id="phone" name="phone"
+											placeholder="Enter Phone Number">
+									</div>
+
 									<div class="form-group">
 										<label for="exampleInputPassword1">Password</label>
 										<input type="password" name="password" id="password" class="form-control"
 											placeholder="Enter Password">
 									</div>
+
 									<br />
 									<button type="submit" id="registersubm" value="Signup"
 										class="btn btn-outline-primary"
@@ -162,16 +170,16 @@
 		<center>
 			<div class="tab" style="margin: 2% 5%;">
 				<div class="row" style="align-items: center;">
-					<div class="col-xs-3">
+					<div class="col-sm-3">
 						<button class="tablinks" onclick="feature(event, 't1')" id="defaultOpen">What is the Importance of Mock Tests?</button>
 					</div>
-					<div class="col-xs-3">
+					<div class="col-sm-3">
 						<button class="tablinks" onclick="feature(event, 't2')" id="defaultOpen">Why Should Students Attempt Mock Tests?</button>
 					</div>
-					<div class="col-xs-3">
+					<div class="col-sm-3">
 						<button class="tablinks" onclick="feature(event, 't3')" id="defaultOpen">What is the Benefit for Students?</button>
 					</div>
-					<div class="col-xs-3">
+					<div class="col-sm-3">
 						<button class="tablinks" onclick="feature(event, 't4')" id="defaultOpen">How Can you Prepare for the Mock Test?</button>
 					</div>
 				</div>
@@ -294,7 +302,7 @@
 
 			window.onload = showContent;
 			window.onresize = showContent;
-	</script>
+		</script>
 	</body>
 
 </html>
